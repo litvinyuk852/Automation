@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/TaskOneHelloWorld/TaskOneHelloWorld.iml" filepath="$PROJECT_DIR$/TaskOneHelloWorld/TaskOneHelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/TaskThreeCalculator/TaskThreeCalculator.iml" filepath="$PROJECT_DIR$/TaskThreeCalculator/TaskThreeCalculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/TaskTwoStudents/TaskTwoStudents.iml" filepath="$PROJECT_DIR$/TaskTwoStudents/TaskTwoStudents.iml" />
     </modules>
