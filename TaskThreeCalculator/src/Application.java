@@ -88,9 +88,11 @@ public class Application {
         result = num1 + num2;
     }
     private void calcSubtraction() {
+
         result = num1 - num2;
     }
     private void calcMultiplication() {
+
         result = num1 * num2;
     }
     private void calcDivision() {
