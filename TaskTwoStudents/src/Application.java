@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Application {
     public static void main (String [] args) {
         Student [] certainStudent=new Student [10];
@@ -92,17 +95,53 @@ public class Application {
         examTicket[8].question="Mali capital";
         examTicket[9].question="Algeria capital";
 
+        System.out.println("Group 1 students result:");
+
         int z=0;
         int sum=0;
+        int [] oneResultA=new int[10];
         while (z<certainStudent.length) {
-            int randomResult = (int) (Math.random() * result.length);
-            int randomTicket = (int) (Math.random() * examTicket.length);
-            System.out.println(certainStudent[z].name+" "+certainStudent[z].lastName+" gets #"+examTicket[randomTicket].id+" ticket: "+examTicket[randomTicket].question+". Gets mark: "+result[randomResult]);
-            sum=sum+result[randomResult];
+            if (certainStudent[z].groupId == 1) {
+                int randomResult = (int) (Math.random() * result.length);
+                int randomTicket = (int) (Math.random() * examTicket.length);
+                System.out.println(certainStudent[z].name + " " + certainStudent[z].lastName + " gets #" + examTicket[randomTicket].id + " ticket: " + examTicket[randomTicket].question + ". Gets mark: " + result[randomResult]);
+                sum = sum + result[randomResult];
+                oneResultA[z]=result[randomResult];
+            }
             z = z + 1;
         }
-        float avgResult=(float) sum/certainStudent.length;
-        System.out.print("Average student result: "+avgResult);
+        Arrays.sort(oneResultA);
+        int min1 = oneResultA[5];
+        int max1 = oneResultA[oneResultA.length -1];
+        System.out.println("Min Result in Group 1 = " + min1);
+        System.out.println("Max Result in Group 1 = " + max1);
+        float avgResultOne = (float) sum / (certainStudent.length/2);
+        System.out.println("Average group student result: " + avgResultOne);
+        System.out.println("");
 
+        System.out.println("Group 2 students result:");
+
+        int y=0;
+        int sum1=0;
+        int [] twoResultA=new int[10];
+        while (y<certainStudent.length) {
+            if (certainStudent[y].groupId == 2) {
+                int randomResult = (int) (Math.random() * result.length);
+                int randomTicket = (int) (Math.random() * examTicket.length);
+                System.out.println(certainStudent[y].name + " " + certainStudent[y].lastName + " gets #" + examTicket[randomTicket].id + " ticket: " + examTicket[randomTicket].question + ". Gets mark: " + result[randomResult]);
+                sum1 = sum1 + result[randomResult];
+                twoResultA[y]=result[randomResult];
+                }
+               y = y + 1;
+        }
+
+        Arrays.sort(twoResultA);
+        int min2 = twoResultA[5];
+        int max2 = twoResultA[twoResultA.length -1];
+        System.out.println("Min Result in Group 2 = " + min2);
+        System.out.println("Max Result in Group 2 = " + max2);
+
+        float avgResultTwo = (float) sum1 / (certainStudent.length/2);
+        System.out.println("Average group student result: " + avgResultTwo);
+        }
     }
-}
